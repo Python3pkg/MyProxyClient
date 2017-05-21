@@ -1636,7 +1636,7 @@ item value set to the file contents
             raise MyProxyClientGetTrustRootsError(errorTxt)
 
         files_dict = dict()
-        for k, v in fileData.items():
+        for k, v in list(fileData.items()):
             if k != fieldName:
                 file_name = _bytes2string(k.split(prefix, 1)[1])
                 file_val = base64.b64decode(v)

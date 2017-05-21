@@ -144,7 +144,7 @@ class MyProxyClientLiveTestCase(_MyProxyClientTestCase):
 
         creds = self.clnt.getDelegation(thisSection['username'], passphrase)
         print("proxy credentials:")
-        print(b''.join(creds))
+        print((b''.join(creds)))
         with open(proxyCertFile, 'wb') as proxy_cert_file:
             proxy_cert_file.write(creds[0]+b''.join(creds[2:]))
 
@@ -168,9 +168,9 @@ class MyProxyClientLiveTestCase(_MyProxyClientTestCase):
                                  path.expandvars(thisSection['sslKeyFile']),
                                  sslKeyFilePassphrase=sslKeyFilePassphrase)
         print("test04Info... ")
-        print("credExists: %s" % credExists)
-        print("errorTxt: " + errorTxt)
-        print("fields: %s" % fields)
+        print(("credExists: %s" % credExists))
+        print(("errorTxt: " + errorTxt))
+        print(("fields: %s" % fields))
 
     def test06ChangePassphrase(self):
         # change pass-phrase protecting a given credential
@@ -217,7 +217,7 @@ class MyProxyClientLiveTestCase(_MyProxyClientTestCase):
         creds = self.clnt.getDelegation(thisSection['username'], passphrase,
                                         bootstrap=True)
         print("proxy credentials:")
-        print(b''.join(creds))
+        print((b''.join(creds)))
 
     def test07Destroy(self):
         # destroy credentials for a given user
